@@ -12,6 +12,7 @@ class MenuViewController: UIViewController, Storyboardable {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    let cellTitles = AppConstants.tableCellTitles
     
     var viewModel: MenuViewModel?
     var coordinator: AppCoordinator?
@@ -20,6 +21,8 @@ class MenuViewController: UIViewController, Storyboardable {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: CustomTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CustomTableViewCell.reuseIdentifier)
+        
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 
 
@@ -29,12 +32,12 @@ class MenuViewController: UIViewController, Storyboardable {
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cellTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
-    
+        cell.commonInit(cellTitles[indexPath.row])
         return cell
     }
     

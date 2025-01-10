@@ -12,6 +12,6 @@ struct Cell {
 }
 
 extension Cell {
-    static var cell = Cell(name: "Checkbox") // 
+    static var cell = Cell(name: "Checkbox") //
     
 }

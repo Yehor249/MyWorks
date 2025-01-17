@@ -14,29 +14,35 @@ class AppCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    // MARK: - Start
     func start() {
         showMenu()
     }
     
-    func showMenu() {
-        let vc = MenuViewController.createObject()
-        vc.coordinator = self
-        vc.viewModel = MenuViewModel()
-        navigationController.pushViewController(vc, animated: true)
+    // MARK: - Navigate
+    func showCell(cellName: String) {
+        switch cellName {
+        case Cell.allCells.first?.name:
+            showCheckbox()
+        default
+            : break // temp
+        }
     }
-//    
-//    func showMain(brandNmae: String) {
-//        let vc = MainViewController.createObject()
-//        let viewModel = MainViewModel()
-//        viewModel.barandName = brandNmae
-//        vc.coordinator = self
-//        vc.viewModel = viewModel
-//        //navigationController.viewControllers.removeAll()
-//        navigationController.pushViewController(vc, animated: true)
-//        
-//    }
-//    
-//    func showDetail() {
-//        
-//    }
+    
+    // MARK: - Show Screens
+    private func showMenu() {
+        let viewModel = MenuViewModel()
+        let viewController = MenuViewController()
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func showCheckbox() {
+        let viewModel = CheckboxViewModel()
+        let viewController = CheckboxViewController()
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

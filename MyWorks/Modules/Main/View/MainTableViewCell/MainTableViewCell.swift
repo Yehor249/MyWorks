@@ -1,14 +1,14 @@
 //
-//  CustomTableViewCell.swift
+//  MainTableViewCell.swift
 //  MyWorks
 //
-//  Created by Yegor Niedov on 17.01.2025.
+//  Created by Yegor Niedov on 20.01.2025.
 //
 
 import UIKit
 
-class MenuTableViewCell: UITableViewCell {
-    
+class MainTableViewCell: UITableViewCell {
+
     @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
@@ -18,6 +18,7 @@ class MenuTableViewCell: UITableViewCell {
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.lightGray.cgColor
         contentView.clipsToBounds = true
+        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.2

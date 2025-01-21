@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension MenuTableViewCell {
+extension MainTableViewCell {
     
     static var reuseIdentifier: String {
         return String(describing: Self.self)

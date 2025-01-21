@@ -21,11 +21,11 @@ class SearchViewController: UIViewController, Storyboardable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableNib = UINib(nibName: "TableViewCell", bundle: nil)
-        tableView.register(tableNib, forCellReuseIdentifier: "tableViewCustomCell")
+        let tableNib = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        tableView.register(tableNib, forCellReuseIdentifier: "SearchTableViewCell")
         
-        let collectionNib = UINib(nibName: "CollectionViewCell", bundle: nil)
-        collectionView.register(collectionNib, forCellWithReuseIdentifier: "collectionViewCustomCell")
+        let collectionNib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        collectionView.register(collectionNib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         
         searchFieldView.layer.cornerRadius = 6
         searchFieldView.layer.shadowOpacity = 0.5
@@ -78,7 +78,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTabelViewCell", for: indexPath) as! SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
         let brand = viewModel?.filteredBrands.value[indexPath.row]
         

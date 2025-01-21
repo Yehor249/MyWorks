@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E4E2EBCA2D3A6C500041E4A9 /* MyWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E2EBCA2D3A6C500041E4A9 /* MyWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MyWorks.app; path = "/Users/yegorndv/Dev/MyWorks/build/Debug-iphoneos/MyWorks.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -46,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				E4A13FB62D30623C00A4DC04 /* MyWorks */,
-				E4E2EBCA2D3A6C500041E4A9 /* MyWorks.app */,
 			);
 			sourceTree = "<group>";
 		};

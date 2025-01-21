@@ -2,7 +2,7 @@
 //  Cell.swift
 //  MyWorks
 //
-//  Created by Yegor Niedov on 09.01.2025.
+//  Created by Yegor Niedov on 21.01.2025.
 //
 
 import Foundation

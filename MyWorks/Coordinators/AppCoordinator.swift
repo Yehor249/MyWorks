@@ -16,23 +16,32 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Start
     func start() {
-        showMenu()
+        showMain()
     }
     
     // MARK: - Navigate
     func showCell(cellName: String) {
         switch cellName {
         case Cell.allCells.first?.name:
-            showCheckbox()
+            showSearch()
         default
             : break // temp
         }
     }
     
     // MARK: - Show Screens
-    private func showMenu() {
-        let viewModel = MenuViewModel()
-        let viewController = MenuViewController()
+    private func showMain() {
+        let viewModel = MainViewModel()
+        let viewController = MainViewController.createObject()
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    // MARK: - Show Screens
+    private func showSearch() {
+        let viewModel = SearchViewModel()
+        let viewController = SearchViewController.createObject()
         viewController.coordinator = self
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
@@ -40,7 +49,7 @@ class AppCoordinator: Coordinator {
     
     private func showCheckbox() {
         let viewModel = CheckboxViewModel()
-        let viewController = CheckboxViewController()
+        let viewController = CheckboxViewController.createObject()
         viewController.coordinator = self
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)

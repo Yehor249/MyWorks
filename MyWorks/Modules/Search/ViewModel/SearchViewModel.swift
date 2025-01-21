@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 
 class SearchViewModel {
+    
     var filteredBrands: Observable<[Brand]> = Observable([])
     var searchHistory: Observable<[String]> = Observable([])
     
     private let allBrands = Brand.allBrands
     
+    // MARK: InIt
     init() {
         filteredBrands.value = allBrands
         searchHistory.value = []

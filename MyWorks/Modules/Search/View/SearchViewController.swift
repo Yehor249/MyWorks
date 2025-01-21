@@ -9,30 +9,26 @@ import UIKit
 
 class SearchViewController: UIViewController, Storyboardable {
     
+    var viewModel: SearchViewModel?
+    var coordinator: AppCoordinator?
+    
+    //MARK: - Outlets
     @IBOutlet weak var searchFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    var viewModel: SearchViewModel?
-    var coordinator: AppCoordinator?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableNib = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        tableView.register(tableNib, forCellReuseIdentifier: "SearchTableViewCell")
+        tableView.register(UINib(nibName: SearchTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.reuseIdentifier)
         
-        let collectionNib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
-        collectionView.register(collectionNib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        collectionView.register(UINib(nibName: SearchCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
         
         searchFieldView.layer.cornerRadius = 6
         searchFieldView.layer.shadowOpacity = 0.5
         searchFieldView.layer.shadowOffset = .zero
         
-        
-        // Настройка текстового поля
         textField.addTarget(self, action: #selector(searchTextChanged), for: .editingChanged)
         
         bindViewModel()
@@ -59,7 +55,6 @@ class SearchViewController: UIViewController, Storyboardable {
         let searchText = sender.text ?? ""
         viewModel?.searchTextFieldDidChange(searchText)
         
-        // Управление видимостью tableView и collectionView
         if searchText.isEmpty {
             tableView.isHidden = true
             collectionView.isHidden = false
@@ -70,7 +65,7 @@ class SearchViewController: UIViewController, Storyboardable {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource & UITableViewDelegate
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +73,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier, for: indexPath) as! SearchTableViewCell
         
         let brand = viewModel?.filteredBrands.value[indexPath.row]
         
@@ -103,33 +98,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-// MARK: - UICollectionViewDataSource
-
+// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (viewModel?.searchHistory.value.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as! SearchCollectionViewCell
         
         let historyItem = viewModel?.searchHistory.value[indexPath.item]
-        cell.label.text = historyItem // Обновите UI элемента, если он отличается
+        cell.label.text = historyItem
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2 - 10, height: 50)
-    }
-}
-
-extension SearchViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        tableView.isHidden = false
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        tableView.isHidden = true
     }
 }

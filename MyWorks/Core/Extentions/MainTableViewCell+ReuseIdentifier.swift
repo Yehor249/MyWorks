@@ -1,5 +1,5 @@
 //
-//  UITableViewCell+Extension.swift
+//  MainTableViewCell+ReuseIdentifier.swift
 //  MyWorks
 //
 //  Created by Yegor Niedov on 09.01.2025.

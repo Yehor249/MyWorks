@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E4E2EBCA2D3A6C500041E4A9 /* MyWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MyWorks.app; path = "/Users/yegorndv/Dev/MyWorks/build/Debug-iphoneos/MyWorks.app"; sourceTree = "<absolute>"; };
+		E41378AC2D3FE420002ACFD3 /* MyWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -46,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A13FB62D30623C00A4DC04 /* MyWorks */,
+				E41378AC2D3FE420002ACFD3 /* MyWorks.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = MyWorks;
-			productReference = E4E2EBCA2D3A6C500041E4A9 /* MyWorks.app */;
+			productReference = E41378AC2D3FE420002ACFD3 /* MyWorks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

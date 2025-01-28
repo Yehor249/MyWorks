@@ -8,17 +8,15 @@ import UIKit
 
 class HomePageCollectionViewController: UICollectionViewController {
     
-    var collectionViewData: CollectionViewData! 
+    var collectionViewData: CollectionViewData!
     
-    init() {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            super.init(collectionViewLayout: layout)
-        }
-
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    override init(collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +25,10 @@ class HomePageCollectionViewController: UICollectionViewController {
             UINib(nibName: HomePageCollectionViewCell.reuseIdentifier, bundle: nil),
             forCellWithReuseIdentifier: HomePageCollectionViewCell.reuseIdentifier
         )
+        setupUI()
     }
 }
+
 
 extension HomePageCollectionViewController {
     
@@ -47,4 +47,17 @@ extension HomePageCollectionViewController {
         
         return cell
     }
+    
+    func setupUI() {
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.itemSize = CGSize(width: 150, height: 225)
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 10
+            layout.scrollDirection = .horizontal
+        }
+    }
+    
+    
 }
+

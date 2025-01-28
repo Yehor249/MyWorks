@@ -6,16 +6,6 @@
 //
 
 import Foundation
-import Foundation
-
-// MARK: - Block Type Enum
-enum BlockType: String, Codable {
-    case collectionView = "UICollectionView"
-    case image = "UIImage"
-}
-
-// MARK: - Block Data Protocol
-protocol BlockData: Codable {}
 
 // MARK: - Data Model for UICollectionView
 struct CollectionViewData: BlockData {

@@ -30,6 +30,94 @@ class HomePageViewModel {
                             "title": "Product 2",
                             "description": "Description of product 2",
                             "price": 20.0
+                        },
+                        {
+                            "imageName": "product3",
+                            "title": "Product 3",
+                            "description": "Description of product 3",
+                            "price": 20.0
+                        }
+
+                    ]
+                }
+            },
+            {
+                "type": "UICollectionView",
+                "data": {
+                    "title": "Featured Products",
+                    "cellIdentifier": "HomePageCollectionViewCell",
+                    "cells": [
+                        {
+                            "imageName": "product1",
+                            "title": "Product 1",
+                            "description": "Description of product 1",
+                            "price": 10.0
+                        },
+                        {
+                            "imageName": "product2",
+                            "title": "Product 2",
+                            "description": "Description of product 2",
+                            "price": 20.0
+                        },
+                        {
+                            "imageName": "product3",
+                            "title": "Product 3",
+                            "description": "Description of product 3",
+                            "price": 20.0
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "UICollectionView",
+                "data": {
+                    "title": "Featured Products",
+                    "cellIdentifier": "HomePageCollectionViewCell",
+                    "cells": [
+                        {
+                            "imageName": "product1",
+                            "title": "Product 1",
+                            "description": "Description of product 1",
+                            "price": 10.0
+                        },
+                        {
+                            "imageName": "product2",
+                            "title": "Product 2",
+                            "description": "Description of product 2",
+                            "price": 20.0
+                        },
+                        {
+                            "imageName": "product3",
+                            "title": "Product 3",
+                            "description": "Description of product 3",
+                            "price": 20.0
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "UICollectionView",
+                "data": {
+                    "title": "Featured Products",
+                    "cellIdentifier": "HomePageCollectionViewCell",
+                    "cells": [
+                        {
+                            "imageName": "product1",
+                            "title": "Product 1",
+                            "description": "Description of product 1",
+                            "price": 10.0
+                        },
+                        {
+                            "imageName": "product2",
+                            "title": "Product 2",
+                            "description": "Description of product 2",
+                            "price": 20.0
+                        },
+                        {
+                            "imageName": "product3",
+                            "title": "Product 3",
+                            "description": "Description of product 3",
+                            "price": 20.0
                         }
                     ]
                 }

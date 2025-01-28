@@ -16,7 +16,8 @@ class HomePageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        //setupUI()
+        
     }
     
     // MARK: - Configure Cell

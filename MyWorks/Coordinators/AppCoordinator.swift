@@ -16,7 +16,7 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Start
     func start() {
-        showMain()
+        showHomePage()
     }
     
     // MARK: - Navigate

@@ -18,36 +18,6 @@
             endingLineNumber = "29"
             landmarkName = "bindViewModel()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CFD3DB8C-DB5B-4D48-ABA5-4399E85AABC1 - 10c28e68e8ca7757"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;MyWorks.Cell&gt;) -&gt; () in MyWorks.MenuViewController.bindViewModel() -&gt; ()"
-                  moduleName = "MyWorks.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yegorndv/Dev/MyWorks/MyWorks/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-               <Location
-                  uuid = "CFD3DB8C-DB5B-4D48-ABA5-4399E85AABC1 - f834db811b17d867"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Array&lt;MyWorks.Cell&gt;) -&gt; () in MyWorks.MenuViewController.bindViewModel() -&gt; ()"
-                  moduleName = "MyWorks.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yegorndv/Dev/MyWorks/MyWorks/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

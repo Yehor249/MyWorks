@@ -15,14 +15,13 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         contentView.layer.cornerRadius = 5
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
-        contentView.clipsToBounds = true
         contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
         
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 5
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 4
+        
+        
         layer.masksToBounds = false
     }
     

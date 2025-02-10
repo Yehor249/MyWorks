@@ -16,14 +16,15 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Start
     func start() {
-        showMain()
+        showHomePage()
     }
     
     // MARK: - Navigate
     func showCell(cellName: String) {
         switch cellName {
         case Cell.allCells.first?.name:
-            showSearch()
+            //showSearch()
+            showHomePage()
         default
             : break // temp
         }
@@ -54,4 +55,13 @@ class AppCoordinator: Coordinator {
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    private func showHomePage() {
+        let viewModel = HomePageViewModel()
+        let viewController = HomePageViewController.createObject()
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
 }
